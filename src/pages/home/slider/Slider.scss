@@ -1,0 +1,137 @@
+@use '../../../scss' as *;
+
+.slider {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+
+  .container {
+    max-width: 1200px;
+  }
+
+  .item {
+    position: relative;
+    height: 420px;
+    padding: 4rem 5rem;
+    border-radius: 12px;
+    color: #fff;
+    background-image: url('../../../assets/images/slider-bg.jpg');
+    background-position: center center;
+    overflow: hidden;
+
+    @include tablet {
+      padding: 3rem;
+    }
+    @include breakpoint-down(800px) {
+      height: 400px;
+    }
+    @include mobile {
+      background-size: cover;
+    }
+    @include phone {
+      height: 420px;
+      padding: 2rem;
+    }
+
+    &__img {
+      position: absolute;
+      top: 10px;
+      right: 80px;
+      width: 300px;
+      height: 420px;
+      object-fit: contain;
+      z-index: 1;
+
+      @include tablet {
+        right: 0;
+      }
+      @include breakpoint-down(800px) {
+        right: -40px;
+      }
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &__title {
+      position: relative;
+      z-index: 2;
+      max-width: 60%;
+      font-size: 36px;
+      margin-bottom: 1rem;
+
+      @include breakpoint-down(800px) {
+        font-size: 30px;
+      }
+      @include mobile {
+        max-width: 100%;
+      }
+      @include phone {
+        font-size: 24px;
+      }
+    }
+
+    &__desc {
+      position: relative;
+      z-index: 2;
+      font-weight: 500;
+      font-size: 18px;
+      margin-bottom: 2rem;
+
+      @include phone {
+        font-size: 16px;
+      }
+    }
+
+    .chars {
+      position: relative;
+      z-index: 2;
+      column-gap: 2rem;
+      row-gap: 1rem;
+      margin-bottom: 2rem;
+
+      &__txt {
+        display: block;
+        margin-bottom: 10px;
+
+        @include mobile {
+          font-size: 14px;
+        }
+      }
+      &__title {
+        font-weight: 500;
+        font-size: 18px;
+
+        @include mobile {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &__btn {
+      padding: 1rem 2rem;
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .slick-dots {
+    bottom: -40px;
+
+    li {
+      margin: 0 6px;
+
+      &.slick-active .custom-dot {
+        background: $btn-color;
+      }
+    }
+
+    .custom-dot {
+      width: 25px;
+      height: 3px;
+      border-radius: 12px;
+      background: #ccc;
+    }
+  }
+}

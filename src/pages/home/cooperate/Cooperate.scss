@@ -1,0 +1,58 @@
+@use '../../../scss' as *;
+
+.cooperate {
+  padding-block: 3rem;
+
+  &__inner {
+    padding: 50px;
+    border-radius: 12px;
+    color: #fff;
+    background: $main-color;
+    background: radial-gradient(circle, rgba(109,175,238,1) 0%, rgba(128,155,195,1) 100%);
+
+    @include breakpoint-down(700px) {
+      padding: 2rem;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    margin-bottom: 1.5rem;
+
+    @include breakpoint-down(700px) {
+      font-size: 30px;
+    }
+    @include phone {
+      font-size: 24px;
+    }
+  }
+
+  &__list {
+    list-style: circle;
+    gap: 12px;
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+
+    .item {
+      font-size: 18px;
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__txt {
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 1rem;
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  &__btn {
+    padding: 1rem 2rem;
+  }
+}

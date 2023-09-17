@@ -1,0 +1,26 @@
+@use '../../../scss' as *;
+
+.cert {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+
+  &__title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 3rem;
+
+    @include mobile {
+      font-size: 28px;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, auto));
+    gap: 1rem;
+
+    @include mobile {
+      grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    }
+  }
+}

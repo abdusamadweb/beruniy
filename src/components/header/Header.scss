@@ -1,0 +1,166 @@
+@use '../../scss' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #f1f1f140;
+  background-color: #f1f1f150;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 5px 15px -3px rgba(0,0,0,0.1);
+  z-index: $index-2;
+
+  &__inner {
+    gap: 2rem;
+  }
+
+  &__logo {
+    .icon {
+      font-size: 42px;
+      color: $main-color;
+    }
+  }
+
+  .nav {
+
+    &__list {
+      gap: 2.5rem;
+
+      .item {
+        position: relative;
+
+        &:hover {
+          .item__link {
+            color: $main-color;
+
+            .icon {
+              color: $main-color;
+            }
+          }
+
+          .sub-menu {
+            transform: translateY(0);
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+
+        &__link {
+          font-weight: 600;
+          padding-block: 2rem;
+          color: $txt-color;
+          transition: color 0.2s ease;
+
+          &.active {
+            color: $main-color;
+
+            .icon {
+              color: $main-color;
+            }
+          }
+
+          .icon {
+            font-size: 14px;
+            margin-left: 6px;
+            color: $txt-color;
+            transition: color 0.2s ease;
+          }
+        }
+
+        .sub-menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 250px;
+          padding-block: 6px;
+          border-top: 3px solid $main-color;
+          background: #fff;
+          box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+
+          transform: translateY(3%);
+          visibility: collapse;
+          opacity: 0;
+          transition: transform 0.2s ease,
+          visibility 0.2s ease,
+          opacity 0.2s ease;
+
+          .itemm {
+
+            &__link {
+              width: 100%;
+              font-weight: 600;
+              font-size: 14px;
+              padding: 10px 1rem;
+              color: $txt-color;
+              transition: color 0.15s ease,
+              background-color 0.15s ease;
+
+              &.active {
+                color: #fff;
+                background: $main-color;
+              }
+
+              &:hover {
+                color: #fff;
+                background: $main-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .sign-up {
+    font-size: 15px;
+  }
+
+  .langs {
+    position: relative;
+
+    &:hover {
+      .langs__other .btn {
+        visibility: visible;
+      }
+
+      .langs__active .btn {
+        border-radius: 5px 5px 0 0;
+      }
+    }
+
+    .btn {
+      font-weight: 500;
+      font-size: 14px;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border: 1px solid #aaa;
+    }
+
+    &__active {
+
+      .btn {
+        border-radius: 5px;
+      }
+    }
+
+    &__other {
+
+      .btn {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 8px 10px;
+        border-radius: 0 0 5px 5px;
+        border-top: none;
+        background-color: #fafafa;
+        visibility: collapse;
+
+        &:hover {
+          background-color: $main-color;
+        }
+      }
+    }
+  }
+}

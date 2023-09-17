@@ -1,0 +1,50 @@
+@use '../../../scss' as *;
+
+.confirm {
+  padding-block: 3rem;
+
+  &__title {
+    font-size: 36px;
+    margin-bottom: 3rem;
+
+    @include mobile {
+      font-size: 28px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, auto));
+    gap: 1.5rem;
+
+    @include mobile {
+      grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    }
+
+    .item {
+      padding: 2.5rem;
+      border-radius: 10px;
+
+      &__icons {
+        width: 60px;
+        height: 60px;
+        display: grid;
+        place-items: center;
+        margin-bottom: 1rem;
+        border-radius: 50%;
+        background: $main-color;
+
+        .icon {
+          font-size: 24px;
+          color: #fff;
+        }
+      }
+
+      &__desc {
+        font-weight: 600;
+        font-size: 18px;
+        color: #fff;
+      }
+    }
+  }
+}
